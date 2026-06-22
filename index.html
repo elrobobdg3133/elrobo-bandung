@@ -100,7 +100,14 @@
           </p>
         </div>
 
-        <form class="registration-form" id="registrationForm" novalidate>
+        <form
+          class="registration-form"
+          id="registrationForm"
+          action="https://formspree.io/f/mkolnown"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="_subject" value="Pendaftaran baru ELROBO Bandung" />
           <div class="field-group">
             <label for="fullName">Nama lengkap</label>
             <input id="fullName" name="fullName" type="text" placeholder="Tulis nama lengkap anak disini" required />
