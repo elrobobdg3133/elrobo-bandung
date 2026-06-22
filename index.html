@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ELROBO Bandung Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="ELROBO Bandung home">
+        <img class="brand-logo" src="assets/elrobo-logo.png" alt="ELROBO Bandung logo" />
+        <span>ELROBO Bandung</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#courses">Pilihan kelas</a>
+        <a href="#benefits">Mengapa ELROBO?</a>
+        <a href="#register">Daftar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">Empower your Creativity</p>
+          <h1>Tingkatkan kreativitas anak anda bersama kami di ELROBO Bandung!.</h1>
+          <p class="hero-copy">
+            ELROBO Bandung adalah lembaga pendidikan yang berfokus pada stimulasi kreativitas anak-anak dan melatih koordinasi kedua tangan mereka dengan alat LEGO Education.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#register">Daftar sekarang!</a>
+            <a class="button secondary" href="#courses">Kelas kami</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Learning highlights">
+          <div>
+            <span class="stat">4.9/5</span>
+            <span class="stat-label">student rating</span>
+          </div>
+          <div>
+            <span class="stat">12k+</span>
+            <span class="stat-label">learners enrolled</span>
+          </div>
+          <div>
+            <span class="stat">36</span>
+            <span class="stat-label">live courses</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="courses">
+        <div class="section-heading">
+          <p class="eyebrow">Kelas Kami</p>
+          <h2>Kelas yang kami tawarkan di ELROBO Bandung</h2>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <span class="course-icon">01</span>
+            <h3>Brick Class</h3>
+            <p>Core science and math lessons with experiments and problem solving.</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon">02</span>
+            <h3>Construction Class</h3>
+            <p>Introductory coding, web literacy, presentations, and safe research.</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon">03</span>
+            <h3>Robotic Class</h3>
+            <p>Membangun project yang dapat bergerak dengan sistem pemograman resmi dari LEGO Mindstorms.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits">
+        <div>
+          <p class="eyebrow">Program kami</p>
+          <h2>5 in 1 Learning areas.</h2>
+        </div>
+        <ul class="benefit-list">
+          <li>Small group classes with mentor feedback</li>
+          <li>Weekly practice tasks and progress reports</li>
+          <li>Recorded lessons for review anytime</li>
+          <li>Certificates after course completion</li>
+        </ul>
+      </section>
+
+      <section class="registration-section" id="register">
+        <div class="form-intro">
+          <p class="eyebrow">Form pendaftaran</p>
+          <h2>Daftar sekarang!</h2>
+          <p>
+            Isi data-data yang diperlukan di form berikut untuk mendaftar menjadi murid ELROBO Bandung.
+          </p>
+        </div>
+
+        <form class="registration-form" id="registrationForm" novalidate>
+          <div class="field-group">
+            <label for="fullName">Nama lengkap</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Tulis nama lengkap anak disini" required />
+            <p class="error-message" id="fullNameError"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="phone">Nomor telepon</label>
+              <input id="phone" name="phone" type="tel" placeholder="+62 812 3456 7890" required />
+              <p class="error-message" id="phoneError"></p>
+            </div>
+           </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="course">Pilih Kelas</label>
+              <select id="course" name="course" required>
+                <option value="">Pilih Kelas</option>
+                <option>Brick Class (3-5 tahun)</option>
+                <option>Construction Class (6-8 tahun)</option>
+                <option>Robotic Class (9 tahun+)</option>
+              </select>
+              <p class="error-message" id="courseError"></p>
+            </div>
+            <div class="field-group">
+              <label for="level">Jenjang Pendidikan</label>
+              <select id="level" name="level" required>
+                <option value="">Pendidikan</option>
+                <option>TK</option>
+                <option>SD Kelas 1-3</option>
+		<option>SD Kelas 4-6</option>
+                <option>SMP</option>
+              </select>
+              <p class="error-message" id="levelError"></p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="schedule">Jadwal yang diinginkan</label>
+            <div class="radio-grid" id="schedule">
+              <label><input type="radio" name="schedule" value="Weekday evenings" required /> Selasa</label>
+              <label><input type="radio" name="schedule" value="Weekend mornings" /> Rabu</label>
+              <label><input type="radio" name="schedule" value="Flexible online" /> Kamis</label>
+            </div>
+            <p class="error-message" id="scheduleError"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Catatan</label>
+            <textarea id="message" name="message" rows="4" placeholder="Catatan"></textarea>
+          </div>
+
+          <label class="consent">
+            <input id="consent" name="consent" type="checkbox" required />
+            Saya setuju akan dihubungi setelah pengisian form ini.
+          </label>
+          <p class="error-message" id="consentError"></p>
+
+          <button class="button primary submit-button" type="submit">Kirim</button>
+          <p class="success-message" id="successMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2022 ELROBO Bandung. Empower your Creativity</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
