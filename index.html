@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ELROBO Bandung Registration</title>
+    <title>ELROBO Bandung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,30 +29,15 @@
       <section class="hero" id="home">
         <div class="hero-content">
           <p class="eyebrow">Empower your Creativity</p>
-          <h1>Tingkatkan kreativitas anak anda bersama kami di ELROBO Bandung!.</h1>
+          <h2>Tingkatkan kreativitas anak anda bersama kami di ELROBO Bandung!</h2>
           <p class="hero-copy">
             ELROBO Bandung adalah lembaga pendidikan yang berfokus pada stimulasi kreativitas anak-anak dan melatih koordinasi kedua tangan mereka dengan alat LEGO Education.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#register">Daftar sekarang!</a>
-            <a class="button secondary" href="#courses">Kelas kami</a>
           </div>
         </div>
-        <div class="hero-panel" aria-label="Learning highlights">
-          <div>
-            <span class="stat">4.9/5</span>
-            <span class="stat-label">student rating</span>
-          </div>
-          <div>
-            <span class="stat">12k+</span>
-            <span class="stat-label">learners enrolled</span>
-          </div>
-          <div>
-            <span class="stat">36</span>
-            <span class="stat-label">live courses</span>
-          </div>
-        </div>
-      </section>
+              </section>
 
       <section class="section" id="courses">
         <div class="section-heading">
@@ -63,17 +48,17 @@
           <article class="course-card">
             <span class="course-icon">01</span>
             <h3>Brick Class</h3>
-            <p>Core science and math lessons with experiments and problem solving.</p>
+            <p>Melatih kreativitas anak anda dengan membangun suatu project menggunakan LEGO Brick.</p>
           </article>
           <article class="course-card">
             <span class="course-icon">02</span>
             <h3>Construction Class</h3>
-            <p>Introductory coding, web literacy, presentations, and safe research.</p>
+            <p>Melatih anak anda menjadi engineer kecil dengan mmbuat project yang dapat bergerak menggunakan alat LEGO 9686</p>
           </article>
           <article class="course-card">
             <span class="course-icon">03</span>
             <h3>Robotic Class</h3>
-            <p>Membangun project yang dapat bergerak dengan sistem pemograman resmi dari LEGO Mindstorms.</p>
+            <p>Membangun project yang dapat bergerak otomatis dengan sistem pemograman resmi dari LEGO Mindstorms.</p>
           </article>
         </div>
       </section>
@@ -84,10 +69,11 @@
           <h2>5 in 1 Learning areas.</h2>
         </div>
         <ul class="benefit-list">
-          <li>Small group classes with mentor feedback</li>
-          <li>Weekly practice tasks and progress reports</li>
-          <li>Recorded lessons for review anytime</li>
-          <li>Certificates after course completion</li>
+          <li>Robot Building and Coding</li>
+          <li>Problem Solving</li>
+          <li>Inventive Stimulation</li>
+          <li>Learning by Iteration (Trial and Error)</li>
+	  <li>Logical Thinking</li>
         </ul>
       </section>
 
@@ -109,15 +95,15 @@
         >
           <input type="hidden" name="_subject" value="Pendaftaran baru ELROBO Bandung" />
           <div class="field-group">
-            <label for="fullName">Nama lengkap</label>
-            <input id="fullName" name="fullName" type="text" placeholder="Tulis nama lengkap anak disini" required />
+            <label for="fullName">Nama anak + Nama orang tua</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Format: Nama anak (nama orang tua)" required />
             <p class="error-message" id="fullNameError"></p>
           </div>
 
           <div class="field-row">
             <div class="field-group">
-              <label for="phone">Nomor telepon</label>
-              <input id="phone" name="phone" type="tel" placeholder="+62 812 3456 7890" required />
+              <label for="phone">Nomor WhatsApp Aktif</label>
+              <input id="phone" name="phone" type="tel" placeholder="0812 3456 7890" required />
               <p class="error-message" id="phoneError"></p>
             </div>
            </div>
@@ -147,18 +133,12 @@
           </div>
 
           <div class="field-group">
-            <label for="schedule">Jadwal yang diinginkan</label>
+            <label for="schedule">Metode pembelajaran</label>
             <div class="radio-grid" id="schedule">
-              <label><input type="radio" name="schedule" value="Weekday evenings" required /> Selasa</label>
-              <label><input type="radio" name="schedule" value="Weekend mornings" /> Rabu</label>
-              <label><input type="radio" name="schedule" value="Flexible online" /> Kamis</label>
+              <label><input type="radio" name="schedule" value="On site" required /> On site</label>
+              <label><input type="radio" name="schedule" value="Online" /> Online</label>
             </div>
             <p class="error-message" id="scheduleError"></p>
-          </div>
-
-          <div class="field-group">
-            <label for="message">Catatan</label>
-            <textarea id="message" name="message" rows="4" placeholder="Catatan"></textarea>
           </div>
 
           <label class="consent">

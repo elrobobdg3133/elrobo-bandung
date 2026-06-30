@@ -82,7 +82,7 @@ a {
   padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 72px);
   background:
     linear-gradient(110deg, rgba(2, 37, 72, 0.92), rgba(2, 111, 181, 0.82)),
-    url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80")
+    url("assets/hero-background.png")
       center/cover;
   color: #fff;
 }

@@ -5,35 +5,29 @@ const fields = {
   fullName: {
     input: document.querySelector("#fullName"),
     error: document.querySelector("#fullNameError"),
-    validate: (value) => value.trim().length >= 2 || "Please enter your full name.",
-  },
-  email: {
-    input: document.querySelector("#email"),
-    error: document.querySelector("#emailError"),
-    validate: (value) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || "Please enter a valid email address.",
+    validate: (value) => value.trim().length >= 2 || "Mohon isi nama lengkap.",
   },
   phone: {
     input: document.querySelector("#phone"),
     error: document.querySelector("#phoneError"),
     validate: (value) =>
-      value.replace(/[^\d]/g, "").length >= 7 || "Please enter a valid phone number.",
+      value.replace(/[^\d]/g, "").length >= 7 || "Mohon isi nomor telepon yang valid.",
   },
   course: {
     input: document.querySelector("#course"),
     error: document.querySelector("#courseError"),
-    validate: (value) => value !== "" || "Please select a course.",
+    validate: (value) => value !== "" || "Mohon pilih kelas.",
   },
   level: {
     input: document.querySelector("#level"),
     error: document.querySelector("#levelError"),
-    validate: (value) => value !== "" || "Please select your current level.",
+    validate: (value) => value !== "" || "Mohon pilih jenjang pendidikan.",
   },
   consent: {
     input: document.querySelector("#consent"),
     error: document.querySelector("#consentError"),
     validate: () =>
-      document.querySelector("#consent").checked || "Please agree to be contacted.",
+      document.querySelector("#consent").checked || "Mohon setujui untuk dihubungi.",
   },
 };
 
@@ -52,7 +46,7 @@ function validateField(field) {
 function validateSchedule() {
   const scheduleError = document.querySelector("#scheduleError");
   const selected = document.querySelector('input[name="schedule"]:checked');
-  scheduleError.textContent = selected ? "" : "Please choose a preferred schedule.";
+  scheduleError.textContent = selected ? "" : "Mohon pilih jadwal yang diinginkan.";
   return Boolean(selected);
 }
 
@@ -70,7 +64,7 @@ document.querySelectorAll('input[name="schedule"]').forEach((radio) => {
   });
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const areFieldsValid = Object.values(fields).every(validateField);
@@ -82,9 +76,38 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  successMessage.textContent =
-    "Registration submitted successfully. We will contact you soon with class details.";
-  form.reset();
+  if (form.action.includes("REPLACE_WITH_YOUR_FORM_ID")) {
+    successMessage.textContent =
+      "Form sudah siap untuk Formspree. Ganti REPLACE_WITH_YOUR_FORM_ID dengan endpoint Formspree kamu.";
+    return;
+  }
 
-  Object.values(fields).forEach((field) => setError(field, ""));
+  const submitButton = form.querySelector(".submit-button");
+  submitButton.disabled = true;
+  submitButton.textContent = "Mengirim...";
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Formspree request failed");
+    }
+
+    successMessage.textContent =
+      "Pendaftaran berhasil dikirim. Kami akan menghubungi Anda segera.";
+    form.reset();
+    Object.values(fields).forEach((field) => setError(field, ""));
+  } catch (error) {
+    successMessage.textContent =
+      "Maaf, pendaftaran belum terkirim. Silakan coba lagi.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Kirim";
+  }
 });
